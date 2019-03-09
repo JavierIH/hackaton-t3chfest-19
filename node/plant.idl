@@ -1,0 +1,8 @@
+struct plant
+{
+    string type;
+    unsigned long id;
+    unsigned long date;
+    string location;
+    sstring state;
+};
