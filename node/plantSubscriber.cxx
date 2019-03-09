@@ -93,8 +93,16 @@ void plantSubscriber::SubListener::onNewDataMessage(Subscriber* sub)
         if(m_info.sampleKind == ALIVE)
         {
             // Print your structure data here.
-            ++n_msg;
-            std::cout << "Sample received, count=" << n_msg << std::endl;
+            //{"type":"on","id":45,"date":123,"location":"cuenca","state":"sembrado"}
+            std::string json = "{\"type\":\"" + st.type()
+                + "\",\"id\":" + std::to_string(st.id())
+                + ",\"date\":" + std::to_string(st.date())
+                + ",\"location\":\"" + st.location()
+                + "\",\"state\":\"" + st.state() + "\"}";
+
+            //std::cout << json << std::endl;
+            std::string output = "echo \"" + json + "\"";
+            system(output.c_str());
         }
     }
 }

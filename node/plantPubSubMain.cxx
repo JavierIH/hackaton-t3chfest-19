@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 
 		type = argv[2];
 		id = std::stoi(argv[3]);
-		std::cout << id << std::endl;
+		location = argv[4];
 	}
 	else {
 		std::cout << "Error: Incorrect arguments." << std::endl;
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 					std::string state;
 					std::cout << "\nstate: ";
 					std::cin >> state;
-					mypub.pub(type, id, std::time(nullptr), location, state);
+					mypub.pub(type, id, (int)std::time(nullptr), location, state);
 				}
 			}
 			break;

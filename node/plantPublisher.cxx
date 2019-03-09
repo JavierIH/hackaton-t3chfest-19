@@ -107,4 +107,5 @@ void plantPublisher::pub(std::string type, long id, long date, std::string locat
     st.state(state);
 
     mp_publisher->write(&st);
+    std::cout << "enviado!" << std::endl;
 }
