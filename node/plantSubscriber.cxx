@@ -102,7 +102,7 @@ void plantSubscriber::SubListener::onNewDataMessage(Subscriber* sub)
 
             //std::cout << json << std::endl;
             //std::string output = "echo \"" + json + "\"";
-
+            std::cout << "recibido!" << std::endl;
             std::string output = "curl --header \"Content-Type: application/json\"   --request POST   --data \'" + json + "\'   http://192.168.5.150:3000/data";
 
 
